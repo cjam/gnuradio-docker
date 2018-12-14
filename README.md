@@ -11,5 +11,7 @@ Running the container with a bunch of magic parameters that make X applications 
 ```
 docker run -i -t -e XAUTHORITY=/tmp/xauth -v ~/.Xauthority:/tmp/xauth -v /tmp/.X11-unix/:/tmp/ -e DISPLAY=$IP:0 --net host gnuradio:basic
 ```
+> Note that you need to replace `$IP` with the IP address of your active NIC. Also, in order for X to work, you need to have XQuartz installed on OSX.
 
-Note that you need to replace `$IP` with the IP address of your active NIC. Also, in order for X to work, you need to have XQuartz installed on OSX.
+> This will launch bash within the container, you will want to run `gnuradio-companion` within the shell if you want the GUI
+
